@@ -10,15 +10,15 @@ steps:
   - name: test-dockerfile
     image: plugins/docker
     settings:
-      repo: nytimes/nginx-vod-module
+      repo: miauwa/nginx-vod-extras
       dry_run: true
     when:
-      event: pull_request
+      event: [pull_request]
 
   - name: build-and-push-to-dockerhub
     image: plugins/docker
     settings:
-      repo: nytimes/nginx-vod-module
+      repo: miauwa/nginx-vod-extras
       auto_tag: true
       username:
         from_secret: docker_username
